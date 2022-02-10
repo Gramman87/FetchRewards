@@ -24,6 +24,7 @@ public class Controller {
 	@Autowired
 	private Service sVc;
 
+	//Route end point "/api/add" adds points to local memory store
 	@PostMapping("add")
 	public void add(@RequestBody Transaction trans, HttpServletResponse res) {
 		try {
@@ -37,6 +38,7 @@ public class Controller {
 		}
 	}
 
+	//Route end point "/api/spend/{quantity of spent point}" deducts points from local memory store
 	@PutMapping("spend/{qty}")
 	public List<Transaction> spend(@RequestBody Transaction trans, @PathVariable Integer qty, HttpServletResponse res) {
 		List<Transaction> result = new ArrayList<>();
@@ -50,6 +52,7 @@ public class Controller {
 		return result;
 	}
 
+	//Route end point "/api/balance" returns totals of local memory store
 	@GetMapping("balance")
 	public List<Transaction> balance() {
 		return sVc.balance();
