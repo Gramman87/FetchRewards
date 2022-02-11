@@ -25,7 +25,6 @@ public class ServiceImpl implements Service {
 		for (Transaction point : balanceSheet) {
 			spent += point.getPoints();
 		}
-		System.out.println(spent);
 		if (quantity > spent) {
 			return null;
 		} else {
