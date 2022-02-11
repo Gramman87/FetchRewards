@@ -7,7 +7,6 @@
 | Void                | POST        | /api/add          | Void                     |
 | List\<Transaction\> | PUT         | /api/spend/{qty}  | Quantity of points spent |
 | List\<Transaction\> | GET         | /api/balance      | Void                     |
-|---------------------|-------------|-------------------|--------------------------|
 
 ### Add
 The "add" resource allows the user to input individual instances of points and time stamps them for server side reference.
