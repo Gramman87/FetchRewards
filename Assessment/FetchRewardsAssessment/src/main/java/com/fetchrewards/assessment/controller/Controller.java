@@ -54,7 +54,11 @@ public class Controller {
 
 	//Route end point "/api/balance" returns totals of local memory store
 	@GetMapping("balance")
-	public List<Transaction> balance() {
-		return sVc.balance();
+	public String balance() {
+		long total = 0;
+		for (Transaction t : sVc.balance()) {
+			total += t.getPoints();
+		}
+		return "Points: " + total;
 	}
 }
